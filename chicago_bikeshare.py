@@ -112,7 +112,7 @@ def count_gender(data_list):
             male += 1
         elif gender == 'Female':
             female += 1
-            
+
     return [male, female]
 
 
@@ -125,13 +125,20 @@ assert len(count_gender(data_list)) == 2, "TASK 5: Wrong lenght returned."
 assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, "TASK 5: Returning wrong result!"
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # Now we can count the users, which gender use it the most?
 # TASK 6
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
     answer = ""
+    male, female = count_gender(data_list)
+
+    if male > female:
+        answer = 'Male'
+    else:
+        answer = 'Female'
+        
     return answer
 
 
