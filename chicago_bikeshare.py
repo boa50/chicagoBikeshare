@@ -77,13 +77,18 @@ assert len(column_to_list(data_list, -2)) == 1551505, "TASK 3: Wrong lenght retu
 assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # Now we know how to access the features, let's count how many Males and Females the dataset have
 # TASK 4
 # TODO: Count each gender. You should not use a function to do that.
 male = 0
 female = 0
 
+for gender in column_to_list(data_list, -2):
+    if gender == 'Male':
+        male += 1
+    elif gender == 'Female':
+        female += 1
 
 # Checking the result
 print("\nTASK 4: Printing how many males and females we found")
