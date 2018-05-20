@@ -25,7 +25,7 @@ print(data_list[0])
 print("Row 1: ")
 print(data_list[1])
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # TASK 1
 # TODO: Print the first 20 rows using a loop to identify the data.
 print("\n\nTASK 1: Printing the first 20 samples")
@@ -35,6 +35,8 @@ data_list = data_list[1:]
 
 # We can access the features through index
 # E.g. sample[6] to print gender or sample[-2]
+for i in range(20):
+    print(str(data_list[i]))
 
 input("Press Enter to continue...")
 # TASK 2
