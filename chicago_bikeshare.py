@@ -98,7 +98,7 @@ print("Male: ", male, "\nFemale: ", female)
 assert male == 935854 and female == 298784, "TASK 4: Count doesn't match."
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # Why don't we creeate a function to do that?
 # TASK 5
 # TODO: Create a function to count the genders. Return a list
@@ -106,6 +106,13 @@ input("Press Enter to continue...")
 def count_gender(data_list):
     male = 0
     female = 0
+
+    for gender in column_to_list(data_list, -2):
+        if gender == 'Male':
+            male += 1
+        elif gender == 'Female':
+            female += 1
+            
     return [male, female]
 
 
