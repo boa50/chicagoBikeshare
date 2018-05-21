@@ -189,13 +189,14 @@ plt.xticks(y_pos, types)
 plt.title('Quantity by User Type')
 plt.show(block=True)
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # TASK 8
 # TODO: Answer the following question
 male, female = count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Type your answer here."
+answer = "Because the genders of the Customer user type are blank. \
+    \nSo male + female are not the people total."
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------
