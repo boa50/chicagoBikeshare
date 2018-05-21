@@ -203,7 +203,7 @@ print("Answer:", answer)
 assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # Let's work with the trip_duration now. We cant get some values from it.
 # TASK 9
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
@@ -214,6 +214,15 @@ max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
+for trip_duration in trip_duration_list:
+    if float(trip_duration) < min_trip or min_trip == 0:
+        min_trip = float(trip_duration)
+    if float(trip_duration) > max_trip or max_trip == 0:
+        max_trip = float(trip_duration)
+    mean_trip += float(trip_duration)
+
+mean_trip /= len(trip_duration_list)
+median_trip = int(sorted(trip_duration_list, key=int)[int(len(trip_duration_list)/2)])
 
 print("\nTASK 9: Printing the min, max, mean and median")
 print("Min: ", min_trip, "Max: ", max_trip, "Mean: ", mean_trip, "Median: ", median_trip)
