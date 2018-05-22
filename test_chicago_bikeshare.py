@@ -60,6 +60,14 @@ for i in range(20):
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
+    """
+    Function to transform one attribute in a csv dataset to a list.
+    Args:
+        data: The csv dataset.
+        index: The index of the field to be transformed.
+    Returns:
+        List of values based on the index
+    """
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
     for row in data:
@@ -104,6 +112,13 @@ print("Male: ", male, "\nFemale: ", female)
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
 def count_gender(data_list):
+    """
+    Function to count the number of males and females in the data_list.
+    Args:
+        data_list: A list of people genders.
+    Returns:
+        An array with the male and female quantities.
+    """
     male = 0
     female = 0
 
@@ -131,6 +146,13 @@ assert len(count_gender(data_list)) == 2, "TASK 5: Wrong lenght returned."
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
+    """
+    Function to show the gender that occurs most in the data_list.
+    Args:
+        data_list: A list of people genders.
+    Returns:
+        'Male' or 'Female' depending which gender occurs most.
+    """
     answer = ""
     male, female = count_gender(data_list)
 
@@ -168,6 +190,13 @@ plt.show(block=True)
 print("\nTASK 7: Check the chart!")
 
 def count_user_types(data_list):
+    """
+    Function to count the number of subscribers and customers in the data_list.
+    Args:
+        data_list: A list of people user_types.
+    Returns:
+        An array with the subscribers and customers quantities.
+    """
     subscriber = 0
     customer = 0
 
@@ -248,7 +277,7 @@ print(user_types)
 #assert len(user_types) == 582, "TASK 10: Wrong len of start stations."
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 # TASK 11
 # Go back and make sure you documented your functions. Explain the input, output and what it do. Example:
 # def new_function(param1: int, param2: str) -> list:
