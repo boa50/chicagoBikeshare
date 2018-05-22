@@ -317,6 +317,7 @@ def count_items(column_list):
         for i in range(len(item_types)):
             if item == item_types[i]:
                 count_items[i] += 1
+                break
 
     return item_types, count_items
 
