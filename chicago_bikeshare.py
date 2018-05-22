@@ -25,7 +25,7 @@ print(data_list[0])
 print("Row 1: ")
 print(data_list[1])
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 1
 # TODO: Print the first 20 rows using a loop to identify the data.
 print("\n\nTASK 1: Printing the first 20 samples")
@@ -39,7 +39,7 @@ for i in range(20):
 # We can access the features through index
 # E.g. sample[6] to print gender or sample[-2]
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 2
 # TODO: Print the `gender` of the first 20 rows
 
@@ -56,7 +56,7 @@ for i in range(20):
 # But it's still hard to get a column in a list. Example: List with all genders
 
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
@@ -85,7 +85,7 @@ assert len(column_to_list(data_list, -2)) == 1551505, "TASK 3: Wrong lenght retu
 assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
 # -----------------------------------------------------
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # Now we know how to access the features, let's count how many Males and Females the dataset have
 # TASK 4
 # TODO: Count each gender. You should not use a function to do that.
@@ -106,7 +106,7 @@ print("Male: ", male, "\nFemale: ", female)
 assert male == 935854 and female == 298784, "TASK 4: Count doesn't match."
 # -----------------------------------------------------
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # Why don't we creeate a function to do that?
 # TASK 5
 # TODO: Create a function to count the genders. Return a list
@@ -140,7 +140,7 @@ assert len(count_gender(data_list)) == 2, "TASK 5: Wrong lenght returned."
 assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 298784, "TASK 5: Returning wrong result!"
 # -----------------------------------------------------
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # Now we can count the users, which gender use it the most?
 # TASK 6
 # TODO: Create a function to get the most popular gender and print the gender as string.
@@ -184,7 +184,7 @@ plt.xticks(y_pos, types)
 plt.title('Quantity by Gender')
 plt.show(block=True)
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 7
 # TODO: Plot a similar graph for user_types. Make sure the legend is correct.
 print("\nTASK 7: Check the chart!")
@@ -218,7 +218,7 @@ plt.xticks(y_pos, types)
 plt.title('Quantity by User Type')
 plt.show(block=True)
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 8
 # TODO: Answer the following question
 male, female = count_gender(data_list)
@@ -232,7 +232,7 @@ print("Answer:", answer)
 assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 # -----------------------------------------------------
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # Let's work with the trip_duration now. We cant get some values from it.
 # TASK 9
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
@@ -263,7 +263,7 @@ assert round(mean_trip) == 940, "TASK 9: mean_trip with wrong result!"
 assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
 # -----------------------------------------------------
 
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 # TASK 10
 # Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
 # TODO: Check types how many start_stations do we have using set()
@@ -296,11 +296,28 @@ input("Press Enter to continue...")
 # TODO: Create a function to count user types without hardcoding the types
 # so we can use this function with a different kind of data.
 print("Will you face it?")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
-    item_types = []
+    """
+    Function to get the different types and the count of the types in the column_list.
+    Args:
+        column_list: A list of values in a determined column.
+    Returns:
+        A list with the different types of the column.
+        A list with the count of the types.
+    """
+    item_types = sorted(list(set(column_list)))
     count_items = []
+
+    for i in range(len(item_types)):
+        count_items.append(0)
+
+    for item in column_list:
+        for i in range(len(item_types)):
+            if item == item_types[i]:
+                count_items[i] += 1
+
     return item_types, count_items
 
 
